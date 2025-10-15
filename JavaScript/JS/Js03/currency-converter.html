@@ -37,6 +37,12 @@
             background-color: #f8f9fa;
             border-radius: 5px;
         }
+        #converted-values p {
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 <body>
@@ -48,6 +54,9 @@
         <p class="conversion" id="pound"></p>
         <p class="conversion" id="yen"></p>
         <p class="conversion" id="cad"></p>
+        <p class="conversion" id="peso"></p>
+        <p class="conversion" id="rupee"></p>
+        
     </div>
     
     <script>
@@ -66,35 +75,37 @@
         // Display USD amount
         document.getElementById('usd').textContent = `$${usdAmount.toFixed(2)} USD equals:`;
         
-        // Convert to Euros
-        let euros = usdAmount * euroRate;
-        document.getElementById('euro').textContent = `€${euros.toFixed(2)} EUR`;
-        
+              // Convert to Euros
+              let euros = usdAmount * euroRate;
+        document.getElementById('euro').textContent = `€${euros.toFixed(2)} EUR (${euroRate} per USD)`;
         
         // Convert to British Pounds
         let pounds = usdAmount * poundRate;
-        // Calculate and display here...
-        document.getElementById('pound').textContent = `£${pounds.toFixed(2)} GBP`;
+        document.getElementById('pound').textContent = `£${pounds.toFixed(2)} GBP (${poundRate} per USD)`;
+        
         // Convert to Japanese Yen
         let yen = usdAmount * yenRate;
-        // Calculate and display here...
-        document.getElementById('yen').textContent = `¥${yen.toFixed(2)} JPY`;
+        document.getElementById('yen').textContent = `¥${yen.toFixed(2)} JPY (${yenRate} per USD)`;
+        
         // Convert to Canadian Dollars
         let cad = usdAmount * cadRate;
-        // Calculate and display here...
-        document.getElementById('cad').textContent = `C$${cad.toFixed(2)} CAD`;
-        // Pesos
+        document.getElementById('cad').textContent = `C$${cad.toFixed(2)} CAD (${cadRate} per USD)`;
+        
+        // Convert to Pesos
         let pesos = usdAmount * pesoRate;
-        document.getElementById('peso').textContent = `₱${pesos.toFixed(2)} PHP`;
-        // Rupees
+        document.getElementById('peso').textContent = `₱${pesos.toFixed(2)} PHP (${pesoRate} per USD)`;
+        
+        // Convert to Rupees
         let rupees = usdAmount * rupeeRate;
-        document.getElementById('rupee').textContent = `₹${rupees.toFixed(2)} INR`;
+        document.getElementById('rupee').textContent = `₹${rupees.toFixed(2)} INR (${rupeeRate} per USD)`;
         
         console.log('USD:', usdAmount);
         console.log('EUR:', euros);
         console.log('GBP:', pounds);
         console.log('JPY:', yen);
         console.log('CAD:', cad);
+        console.log('PHP:', pesos);
+        console.log('INR:', rupees);
     </script>
 </body>
 </html>
