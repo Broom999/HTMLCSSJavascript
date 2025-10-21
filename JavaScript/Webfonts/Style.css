@@ -1,0 +1,157 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Orbitron', sans-serif;
+  background: radial-gradient(circle at top, #0f172a, #1e293b);
+  color: #e5e7eb;
+  padding: 40px 20px;
+}
+
+@font-face {
+  font-family: 'Bitcount Prop Single Ink';
+  src: url('WorkingFonts/BitcountPropSingleInk-VariableFont_CRSV\,ELSH\,ELXP\,SZP1\,SZP2\,XPN1\,XPN2\,YPN1\,YPN2\,slnt\,wght.ttf') format('woff2');
+}
+
+@font-face {
+  font-family: 'Cherry Bomb One';
+  src: url('WorkingFonts/CherryBombOne-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Frijole';
+  src: url('WorkingFonts/Frijole-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Rye';
+  src: url('WorkingFonts/Rye-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Mouse Memoirs';
+  src: url('WorkingFonts/MouseMemoirs-Regular.woff2') format('woff2');
+}
+
+header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+h1 {
+  font-size: 2.8rem;
+  color: #f3f4f6;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #94a3b8;
+  margin-top: 10px;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  gap: 20px;
+  padding: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  border-top: 2px solid #334155;
+  border-bottom: 2px solid #334155;
+}
+
+.theme-card {
+  flex: 0 0 auto;
+  width: 300px;
+  background: linear-gradient(135deg, #0b1220 0%, #1f2937 100%);
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  scroll-snap-align: start;
+}
+
+.theme-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.theme-card:hover .image-container img {
+  transform: scale(1.05);
+}
+
+.image-title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  color: #ffffff;
+  padding: 20px 10px 10px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-align: left;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.description {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  padding: 15px;
+  text-align: left;
+}
+
+/* Theme-specific styles */
+.scifi .image-title,
+.scifi .description {
+  font-family: 'Bitcount Prop Single Ink', monospace;
+  color: #00ffe0;
+  font-size: 20px;
+}
+
+.fantasy .image-title,
+.fantasy .description {
+  font-family: 'Cherry Bomb One', cursive;
+  color: #f5d0fe;
+  font-size: 20px;
+}
+
+.gothic .image-title,
+.gothic .description {
+  font-family: 'Rye', serif;
+  color: #d1d5db;
+  font-size: 20px;
+}
+
+.glyphic .image-title,
+.glyphic .description {
+  font-family: 'Frijole', cursive;
+  color: #a3e635;
+  font-size: 20px;
+}
+
+.anatomical .image-title,
+.anatomical .description {
+  font-family: 'Mouse Memoirs', sans-serif;
+  color: #f87171;
+    font-size: 30px;
+}
