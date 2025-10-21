@@ -1,6 +1,6 @@
 # Tech Careers Research Project
 
-**Team Members:**
+**Team Members: Michael M, Logan M, Matthew P**
 
 **Date:** 
 
@@ -101,7 +101,7 @@ Vr specialist is a part of programming creating games specifically for vrs
 
 #### Interesting Facts or Notes
 What surprised you or seemed interesting about this career?
-VR specialists make most og the training for surgeons in real life and work in therapy for the treatmeant of phobias
+VR specialists make most of the training for surgeons in real life and work in therapy for the treatmeant of phobias
 
 
 
@@ -212,34 +212,34 @@ Create a quick comparison of the careers you researched:
 
 | Career Title | Starting Salary | Education Required | Most Important Skill | Job Growth |
 |-------------|-----------------|-------------------|---------------------|-----------|
-|VR Specialist |76.5K |ed 1 |skill 1 | growth potential 1|
-|Video Game Producer|88.6K |ed 2| skill 2 | growth potential 2|
-|Software Developer |98K |ed 3 |skill 3 | growth potential 3|
+|VR Specialist |76.5K |Bachelor's |Communication |29% |
+|Video Game Producer|88.6K |Bachelor's |Communication |12.2% |
+|Software Developer |98K |Bachelor's |Communication |17.9% |
 
 ### Team Discussion Questions (Fill in your answers)
 
 **1. Which career was most interesting to your team and why?**
-
+Video Game Producer, it's what we want to do
 
 
 
 **2. Which career seems like the best fit for someone who loves the programming/coding aspects of this class?**
-
+Video Game Producer or Software Developer
 
 
 
 **3. Which career seems like the best fit for someone who prefers working with data and analysis?**
-
+Software Developer might deal with some data analysis
 
 
 
 **4. What surprised you most about these careers?**
-
+VR Specialists working with therapy for exposure therapy
 
 
 
 **5. Based on your research, what additional skills or knowledge would be valuable to develop?**
-
+Good Work Ethnic, Time-management, and Driving force
 
 
 
@@ -248,9 +248,9 @@ Create a quick comparison of the careers you researched:
 ## Additional Comments
 
 **Time spent researching:** 
-
+1.5 Hours
 
 **Most helpful resource:** 
-
+Google
 
 **Questions you still have:**
