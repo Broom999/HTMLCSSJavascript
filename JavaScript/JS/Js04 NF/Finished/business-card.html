@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Business Card</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eceff1;
+            padding: 50px;
+        }
+        
+        .card {
+            max-width: 400px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #eceff1 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        .card h2 {
+            margin: 0 0 5px 0;
+            font-size: 28px;
+        }
+        
+        .card .title {
+            font-size: 16px;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+        
+        .card .info {
+            margin: 10px 0;
+            font-size: 14px;
+        }
+        
+        .card .company {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.3);
+            font-weight: bold;
+        }
+
+        .hover-effect:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <div id="card"></div>
+    <img id="gallery-image" src="placeholder.jpg" alt="Placeholder">
+    <script>
+        // Business card information
+        let fullName = "Logan Morrison";
+        let jobTitle = "Student Web Developer";
+        let company = "TechCorp Solutions";
+        let email = "mc_lmorrison@mcjvs2.org";
+        let phone = "(555) 123-4567";
+        let website = "www.alexchen.dev";
+        let adress = "123 Main St, Anytown, USA";
+        let media = "@LoganMorrison-x4s";
+        
+        // Select the card container
+        let cardDiv = document.getElementById('card');
+        let img = document.getElementById('gallery-image');
+        // Build the card HTML using template literals
+       // Change the image source
+        // Using a placeholder service for a real image
+        img.src = 'download.png';
+        // Change the alt text
+        img.alt = 'A cartoon broom';
+        
+        let cardHTML = `
+            <h2>${fullName}</h2>
+            <div class="hover-effect">
+                <div class="title">${jobTitle}</div>
+            <div class="info">📧 ${email}</div>
+            <div class="info">📱 ${phone}</div>
+            <div class="info">🌐 ${website}</div>
+            <div class="info">🏠 ${adress}</div>
+            <div class="info">💬 ${media}</div>
+            <div class="company">${company}</div> </div>
+        `;
+        
+        // Add the card class to the div
+        cardDiv.classList.add('card');
+        
+        // Insert the HTML
+        cardDiv.innerHTML = cardHTML;
+        
+        console.log('Business card created for', fullName);
+    </script>
+</body>
+</html>

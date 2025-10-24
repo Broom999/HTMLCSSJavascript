@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Content Changer</title>
+    <style>
+        body {
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        
+        .card {
+            background-color: brown;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .highlight {
+            background-color: #fff9c4;
+            padding: 10px;
+            border-left: 4px solid #ffc107;
+        }
+
+        .broom {
+            font-size: 50px;
+            margin-top: 20px;
+            display: inline-block;
+            transform: rotate(20deg);
+            color: #ff9800;
+        }
+    </style>
+</head>
+<body>
+    <div id="broom" class="broom">
+    <div class="card">
+        <h1 id="title">Original Title</h1>
+        <p id="description">Original description text.</p>
+        <p id="info">Original info text.</p>
+    </div>
+    </div>
+    
+    <script>
+        // Select elements by their ID
+        let titleElement = document.getElementById('title');
+        let descElement = document.getElementById('description');
+        let infoElement = document.getElementById('info');
+        
+        // Change content using textContent
+        titleElement.textContent = 'JavaScript has not Changed This!';
+        descElement.textContent = 'This text was updated using JavaScript DOM manipulation.';
+        
+        // Use innerHTML when you want to add HTML tags inside
+        infoElement.innerHTML = 'This element now has <em>bold text</em> and <strong>italic text</strong>!';
+        
+        // Add a CSS class to an element
+        descElement.classList.add('highlight');
+        
+        // Change inline styles directly
+        titleElement.style.color = '#2196f3';
+        
+        // Log to console
+        console.log('Content successfully updated!');
+    </script>
+</body>
+</html>
