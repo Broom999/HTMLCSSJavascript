@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f0f4f8;
+        }
+        .quiz-container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        .question {
+            font-size: 20px;
+            margin: 30px 0;
+            color: #34495e;
+        }
+        .option {
+            padding: 15px;
+            margin: 10px 0;
+            background-color: #ecf0f1;
+            border: 2px solid #bdc3c7;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .option:hover {
+            background-color: #d5dbdb;
+            transform: translateX(5px);
+        }
+        #feedback {
+            margin-top: 30px;
+            padding: 20px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            display: none;
+        }
+        .correct {
+            background-color: #d4edda;
+            color: #155724;
+            border: 2px solid #c3e6cb;
+        }
+        .incorrect {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 2px solid #f5c6cb;
+        }
+        #score {
+            text-align: center;
+            font-size: 18px;
+            margin-top: 20px;
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>🎯 Quick Quiz</h1>
+        
+        <div class="question">
+            What does HTML stand for?
+        </div>
+        
+        <div class="option" id="option1">
+            Hyper Text Markup Language
+        </div>
+        <div class="option" id="option2">
+            Hot Mail Language
+        </div>
+        <div class="option" id="option3">
+            How To Make Lasagna
+        </div>
+
+
+            <div class="question">
+                Who popularized brooms in the 18th century?
+            </div>
+            
+            <div class="option" id="option4">
+                Trent Morrison
+            </div>
+            <div class="option" id="option5">
+                Benjamin Franklin
+            </div>
+            <div class="option" id="option6">
+                Levi Dickinson
+            </div>
+        </div>
+        <div id="feedback"></div>
+        
+        <div id="score">Score: 0</div>
+
+
+    
+        <script>
+            let score = 0;
+            let feedback = document.getElementById('feedback');
+            let scoreDisplay = document.getElementById('score');
+        
+            // Track answered questions
+            let answered = {
+                html: false,
+                broom: false
+            };
+        
+            // Utility to disable all options for a question
+            function disableOptions(optionIds) {
+                optionIds.forEach(id => {
+                    document.getElementById(id).style.pointerEvents = 'none';
+                    document.getElementById(id).style.opacity = '0.6';
+                });
+            }
+        
+            // HTML Question
+            ['option1', 'option2', 'option3'].forEach((id, index) => {
+                document.getElementById(id).addEventListener('click', function () {
+                    if (answered.html) return;
+                    answered.html = true;
+        
+                    if (id === 'option1') {
+                        feedback.textContent = '✅ Correct! Well done!';
+                        feedback.className = 'correct';
+                        score++;
+                    } else {
+                        feedback.textContent = '❌ Wrong! The correct answer is Hyper Text Markup Language.';
+                        feedback.className = 'incorrect';
+                    }
+        
+                    feedback.style.display = 'block';
+                    scoreDisplay.textContent = `Score: ${score}`;
+                    disableOptions(['option1', 'option2', 'option3']);
+                });
+            });
+        
+            // Broom Question
+            ['option4', 'option5', 'option6'].forEach((id, index) => {
+                document.getElementById(id).addEventListener('click', function () {
+                    if (answered.broom) return;
+                    answered.broom = true;
+        
+                    if (id === 'option6') {
+                        feedback.textContent = '✅ Correct! Well done!';
+                        feedback.className = 'correct';
+                        score++;
+                    } else {
+                        feedback.textContent = '❌ Wrong! The correct answer is Levi Dickinson.';
+                        feedback.className = 'incorrect';
+                    }
+        
+                    feedback.style.display = 'block';
+                    scoreDisplay.textContent = `Score: ${score}`;
+                    disableOptions(['option4', 'option5', 'option6']);
+                });
+            });
+        
+            // Add Try Again button
+            const tryAgainBtn = document.createElement('button');
+            tryAgainBtn.textContent = '🔄 Try Again';
+            tryAgainBtn.style.marginTop = '30px';
+            tryAgainBtn.style.padding = '10px 20px';
+            tryAgainBtn.style.fontSize = '16px';
+            tryAgainBtn.style.borderRadius = '8px';
+            tryAgainBtn.style.border = 'none';
+            tryAgainBtn.style.backgroundColor = '#3498db';
+            tryAgainBtn.style.color = 'white';
+            tryAgainBtn.style.cursor = 'pointer';
+            tryAgainBtn.addEventListener('click', function () {
+                score = 0;
+                answered.html = false;
+                answered.broom = false;
+                feedback.style.display = 'none';
+                scoreDisplay.textContent = `Score: ${score}`;
+        
+                // Re-enable all options
+                [...document.querySelectorAll('.option')].forEach(opt => {
+                    opt.style.pointerEvents = 'auto';
+                    opt.style.opacity = '1';
+                });
+            });
+        
+            document.querySelector('.quiz-container').appendChild(tryAgainBtn);
+            </script>
+</body>
+</html>
